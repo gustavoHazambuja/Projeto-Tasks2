@@ -2,35 +2,25 @@ package Entities;
 
 public class Task{
 
-    private Long id;
-    private String title;
+    private String name;
     private String description;
     private boolean completed;
 
     public Task(){
     }
 
-    public Task(Long id, String title, String description, boolean completed) {
-        this.id = id;
-        this.title = title;
+    public Task( String name, String description) {
+        this.name = name;
         this.description = description;
-        this.completed = completed;
+        this.completed = false;
     }
 
-    public Long getId() {
-        return id;
+    public String getName() {
+        return name;
     }
 
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public String getTitle() {
-        return title;
-    }
-
-    public void setTitle(String title) {
-        this.title = title;
+    public void setName(String name) {
+        this.name = name;
     }
 
     public String getDescription() {
@@ -49,5 +39,11 @@ public class Task{
         this.completed = completed;
     }
 
+    @Override
+    public String toString(){
+        return String.format("Nome: %s\n" + "Descrição: %s\n" + "Completa: %b\n ", name, description, completed);
+    }
+
+    
     
 }
