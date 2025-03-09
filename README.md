@@ -3,7 +3,7 @@
 
 # Sobre o projeto
 
-Gerenciador de Tarefas é uma aplicação backend. Ela consite na prática em manipular dados sobre as tarefas utilizando uma ArrayList com o uso de lambdas.
+Gerenciador de Tarefas é uma aplicação backend. Ela consite na prática em manipular dados sobre as tarefas utilizando uma ArrayList com o uso de Streams.
 
 
 ## Código
@@ -16,7 +16,7 @@ Gerenciador de Tarefas é uma aplicação backend. Ela consite na prática em ma
 ## Back end
 - Java
 - Coleções(ArrayList)
-- Lambda
+- Streams
 
 ```
 
