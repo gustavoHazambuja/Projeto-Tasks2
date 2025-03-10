@@ -9,7 +9,7 @@ public class Task{
     public Task(){
     }
 
-    public Task( String name, String description) {
+    public Task(String name, String description) {
         this.name = name;
         this.description = description;
         this.completed = false;
@@ -41,7 +41,7 @@ public class Task{
 
     @Override
     public String toString(){
-        return String.format("Nome: %s\n" + "Descrição: %s\n" + "Completa: %b\n ", name, description, completed);
+        return String.format("\nNome: %s\n" + "Descrição: %s\n" + "Completa: %b\n ", name, description, completed);
     }
 
     

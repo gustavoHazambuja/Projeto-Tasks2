@@ -1,12 +1,17 @@
 package Service;
 
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
+import java.util.stream.Collectors;
+
+import javax.sql.rowset.serial.SerialException;
 
 import Entities.Task;
 import Exceptions.CreateException;
 import Exceptions.DeleteException;
 import Exceptions.ListException;
+import Exceptions.SearchException;
 import Exceptions.UpdateException;
 
 public class TaskService {
@@ -51,6 +56,25 @@ public class TaskService {
         
         tasks.add(task);
         System.out.println("\nTarefa criada");
+    }
+
+    public void searchTask(){
+        System.out.println("Informe o nome da tarefa:");
+        name = dados.nextLine().toLowerCase();
+
+        List<Task> tasksFound =  tasks.stream()
+            .filter(t -> t.getName().toLowerCase().contains(name))
+            .collect(Collectors.toList());
+
+        if(tasksFound.isEmpty()){
+            throw new SearchException("Tarefa não contrada.");
+        }
+
+        tasksFound.forEach(System.out::println);
+        System.out.println("Tarefa encontrada.");
+        
+        
+        
     }
 
     public void deleteTask(){
@@ -105,10 +129,10 @@ public class TaskService {
         System.out.println("Infome a nova descrição:");
         String description = dados.nextLine().toLowerCase();
 
-        taskUpdate.setName(name);
+        taskUpdate.setName(newName);
         taskUpdate.setDescription(description);
         taskUpdate.setCompleted(false);
-        System.out.println("\ntarefa atualizada");
+        System.out.println("\nTarefa atualizada");
     }
 
 
