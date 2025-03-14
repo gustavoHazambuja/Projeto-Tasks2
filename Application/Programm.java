@@ -23,7 +23,7 @@ public class Programm {
 
          
         System.out.println("****************************");
-        System.out.println("******** MENU DE OPÇÕES *****");
+        System.out.println("********* MENU DE OPÇÕES *****");
         System.out.println("****************************");
 
         System.out.println("(1) Adicionar tarefa");

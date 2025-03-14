@@ -38,14 +38,12 @@ public class TaskService {
         System.out.println("Informe o nome da tarefa:");
         name = dados.nextLine();
 
-        Task isExist = tasks.stream()
-            .filter(t -> t.getName().equalsIgnoreCase(name))
-            .findFirst()
-            .orElse(null);
+       boolean isExist = tasks.stream()  
+            .anyMatch(t -> t.getName().equalsIgnoreCase(name));
 
-            if(isExist != null){
-                throw new CreateException("Tarefa já existente.");
-            }
+        if(isExist){
+            throw new CreateException("Tarefa já existente");
+        }    
 
         System.out.println("Informe a sua descrição:");
         String description = dados.nextLine();
